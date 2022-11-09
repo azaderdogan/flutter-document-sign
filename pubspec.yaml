@@ -30,15 +30,24 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   bloc: ^8.1.0
+  cloud_firestore: ^4.0.4
   cupertino_icons: ^1.0.2
+  delta_markdown: ^0.8.0
+  easy_pdf_viewer: ^1.0.4
+  equatable: ^2.0.5
   firebase_auth: ^4.1.1
   firebase_core: ^2.1.1
+  firebase_storage: ^11.0.4
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
+  flutter_html_to_pdf: ^0.7.0
   flutter_quill: ^6.1.4
   font_awesome_flutter: ^10.2.1
   google_sign_in: ^5.4.2
+  markdown: ^6.0.1
+  path_provider: ^2.0.11
+  syncfusion_flutter_pdf: ^20.3.56
 
 dev_dependencies:
   flutter_lints: ^2.0.0
