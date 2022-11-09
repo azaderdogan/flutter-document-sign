@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "242276091648",
+    "project_id": "editor-app-os",
+    "storage_bucket": "editor-app-os.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242276091648:android:044447beb1ba20a00655e5",
+        "android_client_info": {
+          "package_name": "com.example.editor_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242276091648-b1evi4o009glt935cvvapnlpi7f22a0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlQuXrqqpOAQXMUyXbEgXj3qcNkPBUTzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242276091648-b1evi4o009glt935cvvapnlpi7f22a0p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "242276091648-hl867cgvh8eooretopb70tevua2gk7er.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.editorApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
