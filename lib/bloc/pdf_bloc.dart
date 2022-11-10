@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:editor_app/model/pdf_model.dart';
@@ -32,7 +33,17 @@ class PdfBloc extends Bloc<PdfEvent, PdfState> {
     }
   }
 
-  FutureOr<void> _onCreate(PdfCreateEvent event, Emitter<PdfState> emit) {}
+  Future<FutureOr<void>> _onCreate(
+      PdfCreateEvent event, Emitter<PdfState> emit) async {
+    emit(PdfLoading());
+    try {
+      await _pdfRepository.createPdf(PdfModel(
+          title: DateTime.now().toString(), url: '', path: event.file.path));
+      emit(PdfUploaded());
+    } catch (e) {
+      emit(PdfError());
+    }
+  }
 
   FutureOr<void> _onUpdate(PdfUpdateEvent event, Emitter<PdfState> emit) {}
 

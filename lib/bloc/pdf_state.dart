@@ -6,13 +6,13 @@ abstract class PdfState extends Equatable {}
 class PdfInitial extends PdfState {
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }
 
 class PdfLoading extends PdfState {
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }
 
 class PdfLoaded extends PdfState {
@@ -28,11 +28,11 @@ class PdfLoaded extends PdfState {
 class PdfError extends PdfState {
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }
 
-class PdfCreated extends PdfState {
+class PdfUploaded extends PdfState {
   @override
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }

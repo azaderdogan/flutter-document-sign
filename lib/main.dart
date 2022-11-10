@@ -12,6 +12,7 @@ import 'package:editor_app/screens/home/pdf_preview_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'bloc/authentication_bloc.dart';
 import 'bloc/document_bloc.dart';
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          initialRoute: '/',
+          initialRoute: '/login',
+          builder: EasyLoading.init(),
           onGenerateRoute: (settings) {
             switch (settings.name) {
               case '/':
@@ -68,9 +70,23 @@ class MyApp extends StatelessWidget {
                 );
               case '/pdf-preview':
                 return MaterialPageRoute(
-                  builder: (context) => PdfPreviewScreen(
-                    file: settings.arguments as File,
-                  ),
+                  builder: (context) {
+                    return PdfViewer(
+                      file: settings.arguments as File,
+                    );
+                  },
+                );
+              case '/pdf-preview-2':
+                return MaterialPageRoute(
+                  builder: (context) {
+                    return settings.arguments is String
+                        ? PdfPreviewScreen.fromUrl(
+                            url: settings.arguments as String,
+                          )
+                        : PdfPreviewScreen.fromFile(
+                            file: settings.arguments as File,
+                          );
+                  },
                 );
               default:
                 return MaterialPageRoute(

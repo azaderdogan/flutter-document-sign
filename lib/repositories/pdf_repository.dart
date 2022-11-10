@@ -23,6 +23,8 @@ class PdfRepository {
   }
 
   Future<void> createPdf(PdfModel pdf) async {
+    var url = await uploadPdf('title ', pdf.path!);
+    pdf.url = url;
     //create pdf in firestore
     await _firestore.collection('pdfs').add(pdf.toMap());
   }

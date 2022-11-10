@@ -20,6 +20,9 @@ class _MyDocumentsScreenState extends State<MyDocumentsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('My Documents'),
+      ),
       body: BlocBuilder<PdfBloc, PdfState>(
         builder: (context, state) {
           if (state is PdfLoaded) {
@@ -28,6 +31,10 @@ class _MyDocumentsScreenState extends State<MyDocumentsScreen> {
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(state.pdfs[index].title),
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/pdf-preview-2',
+                        arguments: state.pdfs[index].url);
+                  },
                 );
               },
             );
